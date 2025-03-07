@@ -1,0 +1,28 @@
+INFO {
+  TITLE:       "001"
+  DESCRIPTION: "Random/Syft/syft_1"
+  SEMANTICS:   Finite,Moore
+  TARGET:      Mealy
+}
+
+MAIN {
+
+  INPUTS {
+
+  }
+
+  OUTPUTS {
+    cabbage;
+    goat;
+    wolf;
+    man;
+    carrygoat;
+    carrycabbage;
+    carrywolf;
+  }
+
+  GUARANTEES {
+    (!cabbage & !goat & !wolf & !man & !carrygoat & !carrycabbage & !carrywolf) &( <true* ; cabbage & goat & wolf > true ) &( [ true* ] < ((goat &  man) + (!goat & !man) + (goat & !cabbage & !wolf) + (!goat & cabbage & wolf)) > true ) &( [ true* ] <((carrygoat& !carrycabbage& !carrywolf) + (!carrygoat & carrycabbage & !carrywolf)+ (!carrygoat& !carrycabbage& carrywolf) + (!carrygoat& !carrycabbage& !carrywolf)) >true ) &( [ true* ] < ((goat& man ; carrygoat& !goat& !man) + (!goat& !man ; carrygoat&goat& man) + (!goat ; !goat& !carrygoat) + (goat ; goat& !carrygoat)) > true ) &( [ true* ] <((cabbage& man ; carrycabbage& !cabbage& !man) + (!cabbage& !man ; carrycabbage&cabbage& man) + (!cabbage ; !cabbage& !carrycabbage) + (cabbage ;cabbage& !carrycabbage)) > true ) &( [ true* ] < ((wolf& man ; carrywolf& !wolf& !man)+ (!wolf& !man ; carrywolf& wolf& man) + (!wolf ; !wolf& !carrywolf) + (wolf ;wolf& !carrywolf)) > true);
+  }
+
+}

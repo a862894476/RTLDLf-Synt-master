@@ -1,0 +1,28 @@
+INFO {
+  TITLE:       "001"
+  DESCRIPTION: "Random/Syft/syft_1"
+  SEMANTICS:   Finite,Moore
+  TARGET:      Mealy
+}
+
+MAIN {
+
+  INPUTS {
+
+  }
+
+  OUTPUTS {
+    cabbage;
+    goat;
+    wolf;
+    man;
+    carrygoat;
+    carrycabbage;
+    carrywolf;
+  }
+
+  GUARANTEES {
+    (!cabbage && !goat && !wolf && !man && !carrygoat && !carrycabbage && !carrywolf) && ( F( cabbage && goat && wolf ) ) && G((goat <-> man) || (goat && !cabbage && !wolf) || ( !goat && wolf && cabbage) ) && G( (!carrycabbage && !carrygoat && !carrywolf) || (carrycabbage && !carrygoat && !carrywolf) || (!carrycabbage && carrygoat && !carrywolf) || (!carrycabbage && !carrygoat && carrywolf) ) &&G( (goat && man && carrygoat && !carrycabbage && !carrywolf && X !goat && X !man ) || (!goat && !man && carrygoat && !carrycabbage && !carrywolf && X goat && X man ) || (goat && X goat && !carrygoat) || (!goat && X !goat && !carrygoat)  )&& G( (cabbage && man && carrycabbage && !carrygoat && !carrywolf && X !cabbage && X !man ) || (!cabbage && !man && carrycabbage && !carrygoat && !carrywolf && X cabbage && X man ) || (cabbage && X cabbage && !carrycabbage) || (!cabbage && X !cabbage && !carrycabbage)  )&& G( (wolf && man && carrywolf && !carrygoat && !carrycabbage && X !wolf && X !man ) || (!wolf && !man && carrywolf && !carrygoat && !carrycabbage && X wolf && X man ) || (wolf && X wolf && !carrywolf) || (!wolf && X !wolf && !carrywolf)  );
+  }
+
+}

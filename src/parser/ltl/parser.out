@@ -1,0 +1,1323 @@
+Created by PLY version 3.10 (http://www.dabeaz.com/ply)
+
+Grammar
+
+Rule 0     S' -> expression
+Rule 1     expression -> ATOM
+Rule 2     expression -> NOT expression
+Rule 3     expression -> expression OR expression
+Rule 4     expression -> expression AND expression
+Rule 5     expression -> expression IMPLIES expression
+Rule 6     expression -> expression EQUIVALENT expression
+Rule 7     expression -> expression XOR expression
+Rule 8     expression -> NEXT expression
+Rule 9     expression -> WEAK_NEXT expression
+Rule 10    expression -> expression UNTIL expression
+Rule 11    expression -> expression BOUNDED_UNTIL expression
+Rule 12    expression -> expression RELEASE expression
+Rule 13    expression -> expression BOUNDED_RELEASE expression
+Rule 14    expression -> GLOBALLY expression
+Rule 15    expression -> BOUNDED_GLOBALLY expression
+Rule 16    expression -> FINALLY expression
+Rule 17    expression -> BOUNDED_FINALLY expression
+Rule 18    expression -> LPAREN expression RPAREN
+
+Terminals, with rules where they appear
+
+AND                  : 4
+ATOM                 : 1
+BOUNDED_FINALLY      : 17
+BOUNDED_GLOBALLY     : 15
+BOUNDED_RELEASE      : 13
+BOUNDED_UNTIL        : 11
+EQUIVALENT           : 6
+FINALLY              : 16
+GLOBALLY             : 14
+IMPLIES              : 5
+LPAREN               : 18
+NEXT                 : 8
+NOT                  : 2
+OR                   : 3
+RELEASE              : 12
+RPAREN               : 18
+UNTIL                : 10
+WEAK_NEXT            : 9
+XOR                  : 7
+error                : 
+
+Nonterminals, with rules where they appear
+
+expression           : 2 3 3 4 4 5 5 6 6 7 7 8 9 10 10 11 11 12 12 13 13 14 15 16 17 18 0
+
+Parsing method: LALR
+
+state 0
+
+    (0) S' -> . expression
+    (1) expression -> . ATOM
+    (2) expression -> . NOT expression
+    (3) expression -> . expression OR expression
+    (4) expression -> . expression AND expression
+    (5) expression -> . expression IMPLIES expression
+    (6) expression -> . expression EQUIVALENT expression
+    (7) expression -> . expression XOR expression
+    (8) expression -> . NEXT expression
+    (9) expression -> . WEAK_NEXT expression
+    (10) expression -> . expression UNTIL expression
+    (11) expression -> . expression BOUNDED_UNTIL expression
+    (12) expression -> . expression RELEASE expression
+    (13) expression -> . expression BOUNDED_RELEASE expression
+    (14) expression -> . GLOBALLY expression
+    (15) expression -> . BOUNDED_GLOBALLY expression
+    (16) expression -> . FINALLY expression
+    (17) expression -> . BOUNDED_FINALLY expression
+    (18) expression -> . LPAREN expression RPAREN
+
+    ATOM            shift and go to state 2
+    NOT             shift and go to state 3
+    NEXT            shift and go to state 4
+    WEAK_NEXT       shift and go to state 5
+    GLOBALLY        shift and go to state 6
+    BOUNDED_GLOBALLY shift and go to state 7
+    FINALLY         shift and go to state 8
+    BOUNDED_FINALLY shift and go to state 9
+    LPAREN          shift and go to state 10
+
+    expression                     shift and go to state 1
+
+state 1
+
+    (0) S' -> expression .
+    (3) expression -> expression . OR expression
+    (4) expression -> expression . AND expression
+    (5) expression -> expression . IMPLIES expression
+    (6) expression -> expression . EQUIVALENT expression
+    (7) expression -> expression . XOR expression
+    (10) expression -> expression . UNTIL expression
+    (11) expression -> expression . BOUNDED_UNTIL expression
+    (12) expression -> expression . RELEASE expression
+    (13) expression -> expression . BOUNDED_RELEASE expression
+
+    OR              shift and go to state 11
+    AND             shift and go to state 12
+    IMPLIES         shift and go to state 13
+    EQUIVALENT      shift and go to state 14
+    XOR             shift and go to state 15
+    UNTIL           shift and go to state 16
+    BOUNDED_UNTIL   shift and go to state 17
+    RELEASE         shift and go to state 18
+    BOUNDED_RELEASE shift and go to state 19
+
+
+state 2
+
+    (1) expression -> ATOM .
+
+    OR              reduce using rule 1 (expression -> ATOM .)
+    AND             reduce using rule 1 (expression -> ATOM .)
+    IMPLIES         reduce using rule 1 (expression -> ATOM .)
+    EQUIVALENT      reduce using rule 1 (expression -> ATOM .)
+    XOR             reduce using rule 1 (expression -> ATOM .)
+    UNTIL           reduce using rule 1 (expression -> ATOM .)
+    BOUNDED_UNTIL   reduce using rule 1 (expression -> ATOM .)
+    RELEASE         reduce using rule 1 (expression -> ATOM .)
+    BOUNDED_RELEASE reduce using rule 1 (expression -> ATOM .)
+    $end            reduce using rule 1 (expression -> ATOM .)
+    RPAREN          reduce using rule 1 (expression -> ATOM .)
+
+
+state 3
+
+    (2) expression -> NOT . expression
+    (1) expression -> . ATOM
+    (2) expression -> . NOT expression
+    (3) expression -> . expression OR expression
+    (4) expression -> . expression AND expression
+    (5) expression -> . expression IMPLIES expression
+    (6) expression -> . expression EQUIVALENT expression
+    (7) expression -> . expression XOR expression
+    (8) expression -> . NEXT expression
+    (9) expression -> . WEAK_NEXT expression
+    (10) expression -> . expression UNTIL expression
+    (11) expression -> . expression BOUNDED_UNTIL expression
+    (12) expression -> . expression RELEASE expression
+    (13) expression -> . expression BOUNDED_RELEASE expression
+    (14) expression -> . GLOBALLY expression
+    (15) expression -> . BOUNDED_GLOBALLY expression
+    (16) expression -> . FINALLY expression
+    (17) expression -> . BOUNDED_FINALLY expression
+    (18) expression -> . LPAREN expression RPAREN
+
+    ATOM            shift and go to state 2
+    NOT             shift and go to state 3
+    NEXT            shift and go to state 4
+    WEAK_NEXT       shift and go to state 5
+    GLOBALLY        shift and go to state 6
+    BOUNDED_GLOBALLY shift and go to state 7
+    FINALLY         shift and go to state 8
+    BOUNDED_FINALLY shift and go to state 9
+    LPAREN          shift and go to state 10
+
+    expression                     shift and go to state 20
+
+state 4
+
+    (8) expression -> NEXT . expression
+    (1) expression -> . ATOM
+    (2) expression -> . NOT expression
+    (3) expression -> . expression OR expression
+    (4) expression -> . expression AND expression
+    (5) expression -> . expression IMPLIES expression
+    (6) expression -> . expression EQUIVALENT expression
+    (7) expression -> . expression XOR expression
+    (8) expression -> . NEXT expression
+    (9) expression -> . WEAK_NEXT expression
+    (10) expression -> . expression UNTIL expression
+    (11) expression -> . expression BOUNDED_UNTIL expression
+    (12) expression -> . expression RELEASE expression
+    (13) expression -> . expression BOUNDED_RELEASE expression
+    (14) expression -> . GLOBALLY expression
+    (15) expression -> . BOUNDED_GLOBALLY expression
+    (16) expression -> . FINALLY expression
+    (17) expression -> . BOUNDED_FINALLY expression
+    (18) expression -> . LPAREN expression RPAREN
+
+    ATOM            shift and go to state 2
+    NOT             shift and go to state 3
+    NEXT            shift and go to state 4
+    WEAK_NEXT       shift and go to state 5
+    GLOBALLY        shift and go to state 6
+    BOUNDED_GLOBALLY shift and go to state 7
+    FINALLY         shift and go to state 8
+    BOUNDED_FINALLY shift and go to state 9
+    LPAREN          shift and go to state 10
+
+    expression                     shift and go to state 21
+
+state 5
+
+    (9) expression -> WEAK_NEXT . expression
+    (1) expression -> . ATOM
+    (2) expression -> . NOT expression
+    (3) expression -> . expression OR expression
+    (4) expression -> . expression AND expression
+    (5) expression -> . expression IMPLIES expression
+    (6) expression -> . expression EQUIVALENT expression
+    (7) expression -> . expression XOR expression
+    (8) expression -> . NEXT expression
+    (9) expression -> . WEAK_NEXT expression
+    (10) expression -> . expression UNTIL expression
+    (11) expression -> . expression BOUNDED_UNTIL expression
+    (12) expression -> . expression RELEASE expression
+    (13) expression -> . expression BOUNDED_RELEASE expression
+    (14) expression -> . GLOBALLY expression
+    (15) expression -> . BOUNDED_GLOBALLY expression
+    (16) expression -> . FINALLY expression
+    (17) expression -> . BOUNDED_FINALLY expression
+    (18) expression -> . LPAREN expression RPAREN
+
+    ATOM            shift and go to state 2
+    NOT             shift and go to state 3
+    NEXT            shift and go to state 4
+    WEAK_NEXT       shift and go to state 5
+    GLOBALLY        shift and go to state 6
+    BOUNDED_GLOBALLY shift and go to state 7
+    FINALLY         shift and go to state 8
+    BOUNDED_FINALLY shift and go to state 9
+    LPAREN          shift and go to state 10
+
+    expression                     shift and go to state 22
+
+state 6
+
+    (14) expression -> GLOBALLY . expression
+    (1) expression -> . ATOM
+    (2) expression -> . NOT expression
+    (3) expression -> . expression OR expression
+    (4) expression -> . expression AND expression
+    (5) expression -> . expression IMPLIES expression
+    (6) expression -> . expression EQUIVALENT expression
+    (7) expression -> . expression XOR expression
+    (8) expression -> . NEXT expression
+    (9) expression -> . WEAK_NEXT expression
+    (10) expression -> . expression UNTIL expression
+    (11) expression -> . expression BOUNDED_UNTIL expression
+    (12) expression -> . expression RELEASE expression
+    (13) expression -> . expression BOUNDED_RELEASE expression
+    (14) expression -> . GLOBALLY expression
+    (15) expression -> . BOUNDED_GLOBALLY expression
+    (16) expression -> . FINALLY expression
+    (17) expression -> . BOUNDED_FINALLY expression
+    (18) expression -> . LPAREN expression RPAREN
+
+    ATOM            shift and go to state 2
+    NOT             shift and go to state 3
+    NEXT            shift and go to state 4
+    WEAK_NEXT       shift and go to state 5
+    GLOBALLY        shift and go to state 6
+    BOUNDED_GLOBALLY shift and go to state 7
+    FINALLY         shift and go to state 8
+    BOUNDED_FINALLY shift and go to state 9
+    LPAREN          shift and go to state 10
+
+    expression                     shift and go to state 23
+
+state 7
+
+    (15) expression -> BOUNDED_GLOBALLY . expression
+    (1) expression -> . ATOM
+    (2) expression -> . NOT expression
+    (3) expression -> . expression OR expression
+    (4) expression -> . expression AND expression
+    (5) expression -> . expression IMPLIES expression
+    (6) expression -> . expression EQUIVALENT expression
+    (7) expression -> . expression XOR expression
+    (8) expression -> . NEXT expression
+    (9) expression -> . WEAK_NEXT expression
+    (10) expression -> . expression UNTIL expression
+    (11) expression -> . expression BOUNDED_UNTIL expression
+    (12) expression -> . expression RELEASE expression
+    (13) expression -> . expression BOUNDED_RELEASE expression
+    (14) expression -> . GLOBALLY expression
+    (15) expression -> . BOUNDED_GLOBALLY expression
+    (16) expression -> . FINALLY expression
+    (17) expression -> . BOUNDED_FINALLY expression
+    (18) expression -> . LPAREN expression RPAREN
+
+    ATOM            shift and go to state 2
+    NOT             shift and go to state 3
+    NEXT            shift and go to state 4
+    WEAK_NEXT       shift and go to state 5
+    GLOBALLY        shift and go to state 6
+    BOUNDED_GLOBALLY shift and go to state 7
+    FINALLY         shift and go to state 8
+    BOUNDED_FINALLY shift and go to state 9
+    LPAREN          shift and go to state 10
+
+    expression                     shift and go to state 24
+
+state 8
+
+    (16) expression -> FINALLY . expression
+    (1) expression -> . ATOM
+    (2) expression -> . NOT expression
+    (3) expression -> . expression OR expression
+    (4) expression -> . expression AND expression
+    (5) expression -> . expression IMPLIES expression
+    (6) expression -> . expression EQUIVALENT expression
+    (7) expression -> . expression XOR expression
+    (8) expression -> . NEXT expression
+    (9) expression -> . WEAK_NEXT expression
+    (10) expression -> . expression UNTIL expression
+    (11) expression -> . expression BOUNDED_UNTIL expression
+    (12) expression -> . expression RELEASE expression
+    (13) expression -> . expression BOUNDED_RELEASE expression
+    (14) expression -> . GLOBALLY expression
+    (15) expression -> . BOUNDED_GLOBALLY expression
+    (16) expression -> . FINALLY expression
+    (17) expression -> . BOUNDED_FINALLY expression
+    (18) expression -> . LPAREN expression RPAREN
+
+    ATOM            shift and go to state 2
+    NOT             shift and go to state 3
+    NEXT            shift and go to state 4
+    WEAK_NEXT       shift and go to state 5
+    GLOBALLY        shift and go to state 6
+    BOUNDED_GLOBALLY shift and go to state 7
+    FINALLY         shift and go to state 8
+    BOUNDED_FINALLY shift and go to state 9
+    LPAREN          shift and go to state 10
+
+    expression                     shift and go to state 25
+
+state 9
+
+    (17) expression -> BOUNDED_FINALLY . expression
+    (1) expression -> . ATOM
+    (2) expression -> . NOT expression
+    (3) expression -> . expression OR expression
+    (4) expression -> . expression AND expression
+    (5) expression -> . expression IMPLIES expression
+    (6) expression -> . expression EQUIVALENT expression
+    (7) expression -> . expression XOR expression
+    (8) expression -> . NEXT expression
+    (9) expression -> . WEAK_NEXT expression
+    (10) expression -> . expression UNTIL expression
+    (11) expression -> . expression BOUNDED_UNTIL expression
+    (12) expression -> . expression RELEASE expression
+    (13) expression -> . expression BOUNDED_RELEASE expression
+    (14) expression -> . GLOBALLY expression
+    (15) expression -> . BOUNDED_GLOBALLY expression
+    (16) expression -> . FINALLY expression
+    (17) expression -> . BOUNDED_FINALLY expression
+    (18) expression -> . LPAREN expression RPAREN
+
+    ATOM            shift and go to state 2
+    NOT             shift and go to state 3
+    NEXT            shift and go to state 4
+    WEAK_NEXT       shift and go to state 5
+    GLOBALLY        shift and go to state 6
+    BOUNDED_GLOBALLY shift and go to state 7
+    FINALLY         shift and go to state 8
+    BOUNDED_FINALLY shift and go to state 9
+    LPAREN          shift and go to state 10
+
+    expression                     shift and go to state 26
+
+state 10
+
+    (18) expression -> LPAREN . expression RPAREN
+    (1) expression -> . ATOM
+    (2) expression -> . NOT expression
+    (3) expression -> . expression OR expression
+    (4) expression -> . expression AND expression
+    (5) expression -> . expression IMPLIES expression
+    (6) expression -> . expression EQUIVALENT expression
+    (7) expression -> . expression XOR expression
+    (8) expression -> . NEXT expression
+    (9) expression -> . WEAK_NEXT expression
+    (10) expression -> . expression UNTIL expression
+    (11) expression -> . expression BOUNDED_UNTIL expression
+    (12) expression -> . expression RELEASE expression
+    (13) expression -> . expression BOUNDED_RELEASE expression
+    (14) expression -> . GLOBALLY expression
+    (15) expression -> . BOUNDED_GLOBALLY expression
+    (16) expression -> . FINALLY expression
+    (17) expression -> . BOUNDED_FINALLY expression
+    (18) expression -> . LPAREN expression RPAREN
+
+    ATOM            shift and go to state 2
+    NOT             shift and go to state 3
+    NEXT            shift and go to state 4
+    WEAK_NEXT       shift and go to state 5
+    GLOBALLY        shift and go to state 6
+    BOUNDED_GLOBALLY shift and go to state 7
+    FINALLY         shift and go to state 8
+    BOUNDED_FINALLY shift and go to state 9
+    LPAREN          shift and go to state 10
+
+    expression                     shift and go to state 27
+
+state 11
+
+    (3) expression -> expression OR . expression
+    (1) expression -> . ATOM
+    (2) expression -> . NOT expression
+    (3) expression -> . expression OR expression
+    (4) expression -> . expression AND expression
+    (5) expression -> . expression IMPLIES expression
+    (6) expression -> . expression EQUIVALENT expression
+    (7) expression -> . expression XOR expression
+    (8) expression -> . NEXT expression
+    (9) expression -> . WEAK_NEXT expression
+    (10) expression -> . expression UNTIL expression
+    (11) expression -> . expression BOUNDED_UNTIL expression
+    (12) expression -> . expression RELEASE expression
+    (13) expression -> . expression BOUNDED_RELEASE expression
+    (14) expression -> . GLOBALLY expression
+    (15) expression -> . BOUNDED_GLOBALLY expression
+    (16) expression -> . FINALLY expression
+    (17) expression -> . BOUNDED_FINALLY expression
+    (18) expression -> . LPAREN expression RPAREN
+
+    ATOM            shift and go to state 2
+    NOT             shift and go to state 3
+    NEXT            shift and go to state 4
+    WEAK_NEXT       shift and go to state 5
+    GLOBALLY        shift and go to state 6
+    BOUNDED_GLOBALLY shift and go to state 7
+    FINALLY         shift and go to state 8
+    BOUNDED_FINALLY shift and go to state 9
+    LPAREN          shift and go to state 10
+
+    expression                     shift and go to state 28
+
+state 12
+
+    (4) expression -> expression AND . expression
+    (1) expression -> . ATOM
+    (2) expression -> . NOT expression
+    (3) expression -> . expression OR expression
+    (4) expression -> . expression AND expression
+    (5) expression -> . expression IMPLIES expression
+    (6) expression -> . expression EQUIVALENT expression
+    (7) expression -> . expression XOR expression
+    (8) expression -> . NEXT expression
+    (9) expression -> . WEAK_NEXT expression
+    (10) expression -> . expression UNTIL expression
+    (11) expression -> . expression BOUNDED_UNTIL expression
+    (12) expression -> . expression RELEASE expression
+    (13) expression -> . expression BOUNDED_RELEASE expression
+    (14) expression -> . GLOBALLY expression
+    (15) expression -> . BOUNDED_GLOBALLY expression
+    (16) expression -> . FINALLY expression
+    (17) expression -> . BOUNDED_FINALLY expression
+    (18) expression -> . LPAREN expression RPAREN
+
+    ATOM            shift and go to state 2
+    NOT             shift and go to state 3
+    NEXT            shift and go to state 4
+    WEAK_NEXT       shift and go to state 5
+    GLOBALLY        shift and go to state 6
+    BOUNDED_GLOBALLY shift and go to state 7
+    FINALLY         shift and go to state 8
+    BOUNDED_FINALLY shift and go to state 9
+    LPAREN          shift and go to state 10
+
+    expression                     shift and go to state 29
+
+state 13
+
+    (5) expression -> expression IMPLIES . expression
+    (1) expression -> . ATOM
+    (2) expression -> . NOT expression
+    (3) expression -> . expression OR expression
+    (4) expression -> . expression AND expression
+    (5) expression -> . expression IMPLIES expression
+    (6) expression -> . expression EQUIVALENT expression
+    (7) expression -> . expression XOR expression
+    (8) expression -> . NEXT expression
+    (9) expression -> . WEAK_NEXT expression
+    (10) expression -> . expression UNTIL expression
+    (11) expression -> . expression BOUNDED_UNTIL expression
+    (12) expression -> . expression RELEASE expression
+    (13) expression -> . expression BOUNDED_RELEASE expression
+    (14) expression -> . GLOBALLY expression
+    (15) expression -> . BOUNDED_GLOBALLY expression
+    (16) expression -> . FINALLY expression
+    (17) expression -> . BOUNDED_FINALLY expression
+    (18) expression -> . LPAREN expression RPAREN
+
+    ATOM            shift and go to state 2
+    NOT             shift and go to state 3
+    NEXT            shift and go to state 4
+    WEAK_NEXT       shift and go to state 5
+    GLOBALLY        shift and go to state 6
+    BOUNDED_GLOBALLY shift and go to state 7
+    FINALLY         shift and go to state 8
+    BOUNDED_FINALLY shift and go to state 9
+    LPAREN          shift and go to state 10
+
+    expression                     shift and go to state 30
+
+state 14
+
+    (6) expression -> expression EQUIVALENT . expression
+    (1) expression -> . ATOM
+    (2) expression -> . NOT expression
+    (3) expression -> . expression OR expression
+    (4) expression -> . expression AND expression
+    (5) expression -> . expression IMPLIES expression
+    (6) expression -> . expression EQUIVALENT expression
+    (7) expression -> . expression XOR expression
+    (8) expression -> . NEXT expression
+    (9) expression -> . WEAK_NEXT expression
+    (10) expression -> . expression UNTIL expression
+    (11) expression -> . expression BOUNDED_UNTIL expression
+    (12) expression -> . expression RELEASE expression
+    (13) expression -> . expression BOUNDED_RELEASE expression
+    (14) expression -> . GLOBALLY expression
+    (15) expression -> . BOUNDED_GLOBALLY expression
+    (16) expression -> . FINALLY expression
+    (17) expression -> . BOUNDED_FINALLY expression
+    (18) expression -> . LPAREN expression RPAREN
+
+    ATOM            shift and go to state 2
+    NOT             shift and go to state 3
+    NEXT            shift and go to state 4
+    WEAK_NEXT       shift and go to state 5
+    GLOBALLY        shift and go to state 6
+    BOUNDED_GLOBALLY shift and go to state 7
+    FINALLY         shift and go to state 8
+    BOUNDED_FINALLY shift and go to state 9
+    LPAREN          shift and go to state 10
+
+    expression                     shift and go to state 31
+
+state 15
+
+    (7) expression -> expression XOR . expression
+    (1) expression -> . ATOM
+    (2) expression -> . NOT expression
+    (3) expression -> . expression OR expression
+    (4) expression -> . expression AND expression
+    (5) expression -> . expression IMPLIES expression
+    (6) expression -> . expression EQUIVALENT expression
+    (7) expression -> . expression XOR expression
+    (8) expression -> . NEXT expression
+    (9) expression -> . WEAK_NEXT expression
+    (10) expression -> . expression UNTIL expression
+    (11) expression -> . expression BOUNDED_UNTIL expression
+    (12) expression -> . expression RELEASE expression
+    (13) expression -> . expression BOUNDED_RELEASE expression
+    (14) expression -> . GLOBALLY expression
+    (15) expression -> . BOUNDED_GLOBALLY expression
+    (16) expression -> . FINALLY expression
+    (17) expression -> . BOUNDED_FINALLY expression
+    (18) expression -> . LPAREN expression RPAREN
+
+    ATOM            shift and go to state 2
+    NOT             shift and go to state 3
+    NEXT            shift and go to state 4
+    WEAK_NEXT       shift and go to state 5
+    GLOBALLY        shift and go to state 6
+    BOUNDED_GLOBALLY shift and go to state 7
+    FINALLY         shift and go to state 8
+    BOUNDED_FINALLY shift and go to state 9
+    LPAREN          shift and go to state 10
+
+    expression                     shift and go to state 32
+
+state 16
+
+    (10) expression -> expression UNTIL . expression
+    (1) expression -> . ATOM
+    (2) expression -> . NOT expression
+    (3) expression -> . expression OR expression
+    (4) expression -> . expression AND expression
+    (5) expression -> . expression IMPLIES expression
+    (6) expression -> . expression EQUIVALENT expression
+    (7) expression -> . expression XOR expression
+    (8) expression -> . NEXT expression
+    (9) expression -> . WEAK_NEXT expression
+    (10) expression -> . expression UNTIL expression
+    (11) expression -> . expression BOUNDED_UNTIL expression
+    (12) expression -> . expression RELEASE expression
+    (13) expression -> . expression BOUNDED_RELEASE expression
+    (14) expression -> . GLOBALLY expression
+    (15) expression -> . BOUNDED_GLOBALLY expression
+    (16) expression -> . FINALLY expression
+    (17) expression -> . BOUNDED_FINALLY expression
+    (18) expression -> . LPAREN expression RPAREN
+
+    ATOM            shift and go to state 2
+    NOT             shift and go to state 3
+    NEXT            shift and go to state 4
+    WEAK_NEXT       shift and go to state 5
+    GLOBALLY        shift and go to state 6
+    BOUNDED_GLOBALLY shift and go to state 7
+    FINALLY         shift and go to state 8
+    BOUNDED_FINALLY shift and go to state 9
+    LPAREN          shift and go to state 10
+
+    expression                     shift and go to state 33
+
+state 17
+
+    (11) expression -> expression BOUNDED_UNTIL . expression
+    (1) expression -> . ATOM
+    (2) expression -> . NOT expression
+    (3) expression -> . expression OR expression
+    (4) expression -> . expression AND expression
+    (5) expression -> . expression IMPLIES expression
+    (6) expression -> . expression EQUIVALENT expression
+    (7) expression -> . expression XOR expression
+    (8) expression -> . NEXT expression
+    (9) expression -> . WEAK_NEXT expression
+    (10) expression -> . expression UNTIL expression
+    (11) expression -> . expression BOUNDED_UNTIL expression
+    (12) expression -> . expression RELEASE expression
+    (13) expression -> . expression BOUNDED_RELEASE expression
+    (14) expression -> . GLOBALLY expression
+    (15) expression -> . BOUNDED_GLOBALLY expression
+    (16) expression -> . FINALLY expression
+    (17) expression -> . BOUNDED_FINALLY expression
+    (18) expression -> . LPAREN expression RPAREN
+
+    ATOM            shift and go to state 2
+    NOT             shift and go to state 3
+    NEXT            shift and go to state 4
+    WEAK_NEXT       shift and go to state 5
+    GLOBALLY        shift and go to state 6
+    BOUNDED_GLOBALLY shift and go to state 7
+    FINALLY         shift and go to state 8
+    BOUNDED_FINALLY shift and go to state 9
+    LPAREN          shift and go to state 10
+
+    expression                     shift and go to state 34
+
+state 18
+
+    (12) expression -> expression RELEASE . expression
+    (1) expression -> . ATOM
+    (2) expression -> . NOT expression
+    (3) expression -> . expression OR expression
+    (4) expression -> . expression AND expression
+    (5) expression -> . expression IMPLIES expression
+    (6) expression -> . expression EQUIVALENT expression
+    (7) expression -> . expression XOR expression
+    (8) expression -> . NEXT expression
+    (9) expression -> . WEAK_NEXT expression
+    (10) expression -> . expression UNTIL expression
+    (11) expression -> . expression BOUNDED_UNTIL expression
+    (12) expression -> . expression RELEASE expression
+    (13) expression -> . expression BOUNDED_RELEASE expression
+    (14) expression -> . GLOBALLY expression
+    (15) expression -> . BOUNDED_GLOBALLY expression
+    (16) expression -> . FINALLY expression
+    (17) expression -> . BOUNDED_FINALLY expression
+    (18) expression -> . LPAREN expression RPAREN
+
+    ATOM            shift and go to state 2
+    NOT             shift and go to state 3
+    NEXT            shift and go to state 4
+    WEAK_NEXT       shift and go to state 5
+    GLOBALLY        shift and go to state 6
+    BOUNDED_GLOBALLY shift and go to state 7
+    FINALLY         shift and go to state 8
+    BOUNDED_FINALLY shift and go to state 9
+    LPAREN          shift and go to state 10
+
+    expression                     shift and go to state 35
+
+state 19
+
+    (13) expression -> expression BOUNDED_RELEASE . expression
+    (1) expression -> . ATOM
+    (2) expression -> . NOT expression
+    (3) expression -> . expression OR expression
+    (4) expression -> . expression AND expression
+    (5) expression -> . expression IMPLIES expression
+    (6) expression -> . expression EQUIVALENT expression
+    (7) expression -> . expression XOR expression
+    (8) expression -> . NEXT expression
+    (9) expression -> . WEAK_NEXT expression
+    (10) expression -> . expression UNTIL expression
+    (11) expression -> . expression BOUNDED_UNTIL expression
+    (12) expression -> . expression RELEASE expression
+    (13) expression -> . expression BOUNDED_RELEASE expression
+    (14) expression -> . GLOBALLY expression
+    (15) expression -> . BOUNDED_GLOBALLY expression
+    (16) expression -> . FINALLY expression
+    (17) expression -> . BOUNDED_FINALLY expression
+    (18) expression -> . LPAREN expression RPAREN
+
+    ATOM            shift and go to state 2
+    NOT             shift and go to state 3
+    NEXT            shift and go to state 4
+    WEAK_NEXT       shift and go to state 5
+    GLOBALLY        shift and go to state 6
+    BOUNDED_GLOBALLY shift and go to state 7
+    FINALLY         shift and go to state 8
+    BOUNDED_FINALLY shift and go to state 9
+    LPAREN          shift and go to state 10
+
+    expression                     shift and go to state 36
+
+state 20
+
+    (2) expression -> NOT expression .
+    (3) expression -> expression . OR expression
+    (4) expression -> expression . AND expression
+    (5) expression -> expression . IMPLIES expression
+    (6) expression -> expression . EQUIVALENT expression
+    (7) expression -> expression . XOR expression
+    (10) expression -> expression . UNTIL expression
+    (11) expression -> expression . BOUNDED_UNTIL expression
+    (12) expression -> expression . RELEASE expression
+    (13) expression -> expression . BOUNDED_RELEASE expression
+
+    OR              reduce using rule 2 (expression -> NOT expression .)
+    AND             reduce using rule 2 (expression -> NOT expression .)
+    IMPLIES         reduce using rule 2 (expression -> NOT expression .)
+    EQUIVALENT      reduce using rule 2 (expression -> NOT expression .)
+    XOR             reduce using rule 2 (expression -> NOT expression .)
+    UNTIL           reduce using rule 2 (expression -> NOT expression .)
+    BOUNDED_UNTIL   reduce using rule 2 (expression -> NOT expression .)
+    RELEASE         reduce using rule 2 (expression -> NOT expression .)
+    BOUNDED_RELEASE reduce using rule 2 (expression -> NOT expression .)
+    $end            reduce using rule 2 (expression -> NOT expression .)
+    RPAREN          reduce using rule 2 (expression -> NOT expression .)
+
+  ! OR              [ shift and go to state 11 ]
+  ! AND             [ shift and go to state 12 ]
+  ! IMPLIES         [ shift and go to state 13 ]
+  ! EQUIVALENT      [ shift and go to state 14 ]
+  ! XOR             [ shift and go to state 15 ]
+  ! UNTIL           [ shift and go to state 16 ]
+  ! BOUNDED_UNTIL   [ shift and go to state 17 ]
+  ! RELEASE         [ shift and go to state 18 ]
+  ! BOUNDED_RELEASE [ shift and go to state 19 ]
+
+
+state 21
+
+    (8) expression -> NEXT expression .
+    (3) expression -> expression . OR expression
+    (4) expression -> expression . AND expression
+    (5) expression -> expression . IMPLIES expression
+    (6) expression -> expression . EQUIVALENT expression
+    (7) expression -> expression . XOR expression
+    (10) expression -> expression . UNTIL expression
+    (11) expression -> expression . BOUNDED_UNTIL expression
+    (12) expression -> expression . RELEASE expression
+    (13) expression -> expression . BOUNDED_RELEASE expression
+
+    OR              reduce using rule 8 (expression -> NEXT expression .)
+    AND             reduce using rule 8 (expression -> NEXT expression .)
+    IMPLIES         reduce using rule 8 (expression -> NEXT expression .)
+    EQUIVALENT      reduce using rule 8 (expression -> NEXT expression .)
+    XOR             reduce using rule 8 (expression -> NEXT expression .)
+    UNTIL           reduce using rule 8 (expression -> NEXT expression .)
+    BOUNDED_UNTIL   reduce using rule 8 (expression -> NEXT expression .)
+    RELEASE         reduce using rule 8 (expression -> NEXT expression .)
+    BOUNDED_RELEASE reduce using rule 8 (expression -> NEXT expression .)
+    $end            reduce using rule 8 (expression -> NEXT expression .)
+    RPAREN          reduce using rule 8 (expression -> NEXT expression .)
+
+  ! OR              [ shift and go to state 11 ]
+  ! AND             [ shift and go to state 12 ]
+  ! IMPLIES         [ shift and go to state 13 ]
+  ! EQUIVALENT      [ shift and go to state 14 ]
+  ! XOR             [ shift and go to state 15 ]
+  ! UNTIL           [ shift and go to state 16 ]
+  ! BOUNDED_UNTIL   [ shift and go to state 17 ]
+  ! RELEASE         [ shift and go to state 18 ]
+  ! BOUNDED_RELEASE [ shift and go to state 19 ]
+
+
+state 22
+
+    (9) expression -> WEAK_NEXT expression .
+    (3) expression -> expression . OR expression
+    (4) expression -> expression . AND expression
+    (5) expression -> expression . IMPLIES expression
+    (6) expression -> expression . EQUIVALENT expression
+    (7) expression -> expression . XOR expression
+    (10) expression -> expression . UNTIL expression
+    (11) expression -> expression . BOUNDED_UNTIL expression
+    (12) expression -> expression . RELEASE expression
+    (13) expression -> expression . BOUNDED_RELEASE expression
+
+    OR              reduce using rule 9 (expression -> WEAK_NEXT expression .)
+    AND             reduce using rule 9 (expression -> WEAK_NEXT expression .)
+    IMPLIES         reduce using rule 9 (expression -> WEAK_NEXT expression .)
+    EQUIVALENT      reduce using rule 9 (expression -> WEAK_NEXT expression .)
+    XOR             reduce using rule 9 (expression -> WEAK_NEXT expression .)
+    UNTIL           reduce using rule 9 (expression -> WEAK_NEXT expression .)
+    BOUNDED_UNTIL   reduce using rule 9 (expression -> WEAK_NEXT expression .)
+    RELEASE         reduce using rule 9 (expression -> WEAK_NEXT expression .)
+    BOUNDED_RELEASE reduce using rule 9 (expression -> WEAK_NEXT expression .)
+    $end            reduce using rule 9 (expression -> WEAK_NEXT expression .)
+    RPAREN          reduce using rule 9 (expression -> WEAK_NEXT expression .)
+
+  ! OR              [ shift and go to state 11 ]
+  ! AND             [ shift and go to state 12 ]
+  ! IMPLIES         [ shift and go to state 13 ]
+  ! EQUIVALENT      [ shift and go to state 14 ]
+  ! XOR             [ shift and go to state 15 ]
+  ! UNTIL           [ shift and go to state 16 ]
+  ! BOUNDED_UNTIL   [ shift and go to state 17 ]
+  ! RELEASE         [ shift and go to state 18 ]
+  ! BOUNDED_RELEASE [ shift and go to state 19 ]
+
+
+state 23
+
+    (14) expression -> GLOBALLY expression .
+    (3) expression -> expression . OR expression
+    (4) expression -> expression . AND expression
+    (5) expression -> expression . IMPLIES expression
+    (6) expression -> expression . EQUIVALENT expression
+    (7) expression -> expression . XOR expression
+    (10) expression -> expression . UNTIL expression
+    (11) expression -> expression . BOUNDED_UNTIL expression
+    (12) expression -> expression . RELEASE expression
+    (13) expression -> expression . BOUNDED_RELEASE expression
+
+    OR              reduce using rule 14 (expression -> GLOBALLY expression .)
+    AND             reduce using rule 14 (expression -> GLOBALLY expression .)
+    IMPLIES         reduce using rule 14 (expression -> GLOBALLY expression .)
+    EQUIVALENT      reduce using rule 14 (expression -> GLOBALLY expression .)
+    XOR             reduce using rule 14 (expression -> GLOBALLY expression .)
+    UNTIL           reduce using rule 14 (expression -> GLOBALLY expression .)
+    BOUNDED_UNTIL   reduce using rule 14 (expression -> GLOBALLY expression .)
+    RELEASE         reduce using rule 14 (expression -> GLOBALLY expression .)
+    BOUNDED_RELEASE reduce using rule 14 (expression -> GLOBALLY expression .)
+    $end            reduce using rule 14 (expression -> GLOBALLY expression .)
+    RPAREN          reduce using rule 14 (expression -> GLOBALLY expression .)
+
+  ! OR              [ shift and go to state 11 ]
+  ! AND             [ shift and go to state 12 ]
+  ! IMPLIES         [ shift and go to state 13 ]
+  ! EQUIVALENT      [ shift and go to state 14 ]
+  ! XOR             [ shift and go to state 15 ]
+  ! UNTIL           [ shift and go to state 16 ]
+  ! BOUNDED_UNTIL   [ shift and go to state 17 ]
+  ! RELEASE         [ shift and go to state 18 ]
+  ! BOUNDED_RELEASE [ shift and go to state 19 ]
+
+
+state 24
+
+    (15) expression -> BOUNDED_GLOBALLY expression .
+    (3) expression -> expression . OR expression
+    (4) expression -> expression . AND expression
+    (5) expression -> expression . IMPLIES expression
+    (6) expression -> expression . EQUIVALENT expression
+    (7) expression -> expression . XOR expression
+    (10) expression -> expression . UNTIL expression
+    (11) expression -> expression . BOUNDED_UNTIL expression
+    (12) expression -> expression . RELEASE expression
+    (13) expression -> expression . BOUNDED_RELEASE expression
+
+    OR              reduce using rule 15 (expression -> BOUNDED_GLOBALLY expression .)
+    AND             reduce using rule 15 (expression -> BOUNDED_GLOBALLY expression .)
+    IMPLIES         reduce using rule 15 (expression -> BOUNDED_GLOBALLY expression .)
+    EQUIVALENT      reduce using rule 15 (expression -> BOUNDED_GLOBALLY expression .)
+    XOR             reduce using rule 15 (expression -> BOUNDED_GLOBALLY expression .)
+    UNTIL           reduce using rule 15 (expression -> BOUNDED_GLOBALLY expression .)
+    BOUNDED_UNTIL   reduce using rule 15 (expression -> BOUNDED_GLOBALLY expression .)
+    RELEASE         reduce using rule 15 (expression -> BOUNDED_GLOBALLY expression .)
+    BOUNDED_RELEASE reduce using rule 15 (expression -> BOUNDED_GLOBALLY expression .)
+    $end            reduce using rule 15 (expression -> BOUNDED_GLOBALLY expression .)
+    RPAREN          reduce using rule 15 (expression -> BOUNDED_GLOBALLY expression .)
+
+  ! OR              [ shift and go to state 11 ]
+  ! AND             [ shift and go to state 12 ]
+  ! IMPLIES         [ shift and go to state 13 ]
+  ! EQUIVALENT      [ shift and go to state 14 ]
+  ! XOR             [ shift and go to state 15 ]
+  ! UNTIL           [ shift and go to state 16 ]
+  ! BOUNDED_UNTIL   [ shift and go to state 17 ]
+  ! RELEASE         [ shift and go to state 18 ]
+  ! BOUNDED_RELEASE [ shift and go to state 19 ]
+
+
+state 25
+
+    (16) expression -> FINALLY expression .
+    (3) expression -> expression . OR expression
+    (4) expression -> expression . AND expression
+    (5) expression -> expression . IMPLIES expression
+    (6) expression -> expression . EQUIVALENT expression
+    (7) expression -> expression . XOR expression
+    (10) expression -> expression . UNTIL expression
+    (11) expression -> expression . BOUNDED_UNTIL expression
+    (12) expression -> expression . RELEASE expression
+    (13) expression -> expression . BOUNDED_RELEASE expression
+
+    OR              reduce using rule 16 (expression -> FINALLY expression .)
+    AND             reduce using rule 16 (expression -> FINALLY expression .)
+    IMPLIES         reduce using rule 16 (expression -> FINALLY expression .)
+    EQUIVALENT      reduce using rule 16 (expression -> FINALLY expression .)
+    XOR             reduce using rule 16 (expression -> FINALLY expression .)
+    UNTIL           reduce using rule 16 (expression -> FINALLY expression .)
+    BOUNDED_UNTIL   reduce using rule 16 (expression -> FINALLY expression .)
+    RELEASE         reduce using rule 16 (expression -> FINALLY expression .)
+    BOUNDED_RELEASE reduce using rule 16 (expression -> FINALLY expression .)
+    $end            reduce using rule 16 (expression -> FINALLY expression .)
+    RPAREN          reduce using rule 16 (expression -> FINALLY expression .)
+
+  ! OR              [ shift and go to state 11 ]
+  ! AND             [ shift and go to state 12 ]
+  ! IMPLIES         [ shift and go to state 13 ]
+  ! EQUIVALENT      [ shift and go to state 14 ]
+  ! XOR             [ shift and go to state 15 ]
+  ! UNTIL           [ shift and go to state 16 ]
+  ! BOUNDED_UNTIL   [ shift and go to state 17 ]
+  ! RELEASE         [ shift and go to state 18 ]
+  ! BOUNDED_RELEASE [ shift and go to state 19 ]
+
+
+state 26
+
+    (17) expression -> BOUNDED_FINALLY expression .
+    (3) expression -> expression . OR expression
+    (4) expression -> expression . AND expression
+    (5) expression -> expression . IMPLIES expression
+    (6) expression -> expression . EQUIVALENT expression
+    (7) expression -> expression . XOR expression
+    (10) expression -> expression . UNTIL expression
+    (11) expression -> expression . BOUNDED_UNTIL expression
+    (12) expression -> expression . RELEASE expression
+    (13) expression -> expression . BOUNDED_RELEASE expression
+
+    OR              reduce using rule 17 (expression -> BOUNDED_FINALLY expression .)
+    AND             reduce using rule 17 (expression -> BOUNDED_FINALLY expression .)
+    IMPLIES         reduce using rule 17 (expression -> BOUNDED_FINALLY expression .)
+    EQUIVALENT      reduce using rule 17 (expression -> BOUNDED_FINALLY expression .)
+    XOR             reduce using rule 17 (expression -> BOUNDED_FINALLY expression .)
+    UNTIL           reduce using rule 17 (expression -> BOUNDED_FINALLY expression .)
+    BOUNDED_UNTIL   reduce using rule 17 (expression -> BOUNDED_FINALLY expression .)
+    RELEASE         reduce using rule 17 (expression -> BOUNDED_FINALLY expression .)
+    BOUNDED_RELEASE reduce using rule 17 (expression -> BOUNDED_FINALLY expression .)
+    $end            reduce using rule 17 (expression -> BOUNDED_FINALLY expression .)
+    RPAREN          reduce using rule 17 (expression -> BOUNDED_FINALLY expression .)
+
+  ! OR              [ shift and go to state 11 ]
+  ! AND             [ shift and go to state 12 ]
+  ! IMPLIES         [ shift and go to state 13 ]
+  ! EQUIVALENT      [ shift and go to state 14 ]
+  ! XOR             [ shift and go to state 15 ]
+  ! UNTIL           [ shift and go to state 16 ]
+  ! BOUNDED_UNTIL   [ shift and go to state 17 ]
+  ! RELEASE         [ shift and go to state 18 ]
+  ! BOUNDED_RELEASE [ shift and go to state 19 ]
+
+
+state 27
+
+    (18) expression -> LPAREN expression . RPAREN
+    (3) expression -> expression . OR expression
+    (4) expression -> expression . AND expression
+    (5) expression -> expression . IMPLIES expression
+    (6) expression -> expression . EQUIVALENT expression
+    (7) expression -> expression . XOR expression
+    (10) expression -> expression . UNTIL expression
+    (11) expression -> expression . BOUNDED_UNTIL expression
+    (12) expression -> expression . RELEASE expression
+    (13) expression -> expression . BOUNDED_RELEASE expression
+
+    RPAREN          shift and go to state 37
+    OR              shift and go to state 11
+    AND             shift and go to state 12
+    IMPLIES         shift and go to state 13
+    EQUIVALENT      shift and go to state 14
+    XOR             shift and go to state 15
+    UNTIL           shift and go to state 16
+    BOUNDED_UNTIL   shift and go to state 17
+    RELEASE         shift and go to state 18
+    BOUNDED_RELEASE shift and go to state 19
+
+
+state 28
+
+    (3) expression -> expression OR expression .
+    (3) expression -> expression . OR expression
+    (4) expression -> expression . AND expression
+    (5) expression -> expression . IMPLIES expression
+    (6) expression -> expression . EQUIVALENT expression
+    (7) expression -> expression . XOR expression
+    (10) expression -> expression . UNTIL expression
+    (11) expression -> expression . BOUNDED_UNTIL expression
+    (12) expression -> expression . RELEASE expression
+    (13) expression -> expression . BOUNDED_RELEASE expression
+
+    OR              reduce using rule 3 (expression -> expression OR expression .)
+    $end            reduce using rule 3 (expression -> expression OR expression .)
+    RPAREN          reduce using rule 3 (expression -> expression OR expression .)
+    AND             shift and go to state 12
+    IMPLIES         shift and go to state 13
+    EQUIVALENT      shift and go to state 14
+    XOR             shift and go to state 15
+    UNTIL           shift and go to state 16
+    BOUNDED_UNTIL   shift and go to state 17
+    RELEASE         shift and go to state 18
+    BOUNDED_RELEASE shift and go to state 19
+
+  ! AND             [ reduce using rule 3 (expression -> expression OR expression .) ]
+  ! IMPLIES         [ reduce using rule 3 (expression -> expression OR expression .) ]
+  ! EQUIVALENT      [ reduce using rule 3 (expression -> expression OR expression .) ]
+  ! XOR             [ reduce using rule 3 (expression -> expression OR expression .) ]
+  ! UNTIL           [ reduce using rule 3 (expression -> expression OR expression .) ]
+  ! BOUNDED_UNTIL   [ reduce using rule 3 (expression -> expression OR expression .) ]
+  ! RELEASE         [ reduce using rule 3 (expression -> expression OR expression .) ]
+  ! BOUNDED_RELEASE [ reduce using rule 3 (expression -> expression OR expression .) ]
+  ! OR              [ shift and go to state 11 ]
+
+
+state 29
+
+    (4) expression -> expression AND expression .
+    (3) expression -> expression . OR expression
+    (4) expression -> expression . AND expression
+    (5) expression -> expression . IMPLIES expression
+    (6) expression -> expression . EQUIVALENT expression
+    (7) expression -> expression . XOR expression
+    (10) expression -> expression . UNTIL expression
+    (11) expression -> expression . BOUNDED_UNTIL expression
+    (12) expression -> expression . RELEASE expression
+    (13) expression -> expression . BOUNDED_RELEASE expression
+
+    OR              reduce using rule 4 (expression -> expression AND expression .)
+    AND             reduce using rule 4 (expression -> expression AND expression .)
+    XOR             reduce using rule 4 (expression -> expression AND expression .)
+    $end            reduce using rule 4 (expression -> expression AND expression .)
+    RPAREN          reduce using rule 4 (expression -> expression AND expression .)
+    IMPLIES         shift and go to state 13
+    EQUIVALENT      shift and go to state 14
+    UNTIL           shift and go to state 16
+    BOUNDED_UNTIL   shift and go to state 17
+    RELEASE         shift and go to state 18
+    BOUNDED_RELEASE shift and go to state 19
+
+  ! IMPLIES         [ reduce using rule 4 (expression -> expression AND expression .) ]
+  ! EQUIVALENT      [ reduce using rule 4 (expression -> expression AND expression .) ]
+  ! UNTIL           [ reduce using rule 4 (expression -> expression AND expression .) ]
+  ! BOUNDED_UNTIL   [ reduce using rule 4 (expression -> expression AND expression .) ]
+  ! RELEASE         [ reduce using rule 4 (expression -> expression AND expression .) ]
+  ! BOUNDED_RELEASE [ reduce using rule 4 (expression -> expression AND expression .) ]
+  ! OR              [ shift and go to state 11 ]
+  ! AND             [ shift and go to state 12 ]
+  ! XOR             [ shift and go to state 15 ]
+
+
+state 30
+
+    (5) expression -> expression IMPLIES expression .
+    (3) expression -> expression . OR expression
+    (4) expression -> expression . AND expression
+    (5) expression -> expression . IMPLIES expression
+    (6) expression -> expression . EQUIVALENT expression
+    (7) expression -> expression . XOR expression
+    (10) expression -> expression . UNTIL expression
+    (11) expression -> expression . BOUNDED_UNTIL expression
+    (12) expression -> expression . RELEASE expression
+    (13) expression -> expression . BOUNDED_RELEASE expression
+
+    OR              reduce using rule 5 (expression -> expression IMPLIES expression .)
+    AND             reduce using rule 5 (expression -> expression IMPLIES expression .)
+    IMPLIES         reduce using rule 5 (expression -> expression IMPLIES expression .)
+    EQUIVALENT      reduce using rule 5 (expression -> expression IMPLIES expression .)
+    XOR             reduce using rule 5 (expression -> expression IMPLIES expression .)
+    $end            reduce using rule 5 (expression -> expression IMPLIES expression .)
+    RPAREN          reduce using rule 5 (expression -> expression IMPLIES expression .)
+    UNTIL           shift and go to state 16
+    BOUNDED_UNTIL   shift and go to state 17
+    RELEASE         shift and go to state 18
+    BOUNDED_RELEASE shift and go to state 19
+
+  ! UNTIL           [ reduce using rule 5 (expression -> expression IMPLIES expression .) ]
+  ! BOUNDED_UNTIL   [ reduce using rule 5 (expression -> expression IMPLIES expression .) ]
+  ! RELEASE         [ reduce using rule 5 (expression -> expression IMPLIES expression .) ]
+  ! BOUNDED_RELEASE [ reduce using rule 5 (expression -> expression IMPLIES expression .) ]
+  ! OR              [ shift and go to state 11 ]
+  ! AND             [ shift and go to state 12 ]
+  ! IMPLIES         [ shift and go to state 13 ]
+  ! EQUIVALENT      [ shift and go to state 14 ]
+  ! XOR             [ shift and go to state 15 ]
+
+
+state 31
+
+    (6) expression -> expression EQUIVALENT expression .
+    (3) expression -> expression . OR expression
+    (4) expression -> expression . AND expression
+    (5) expression -> expression . IMPLIES expression
+    (6) expression -> expression . EQUIVALENT expression
+    (7) expression -> expression . XOR expression
+    (10) expression -> expression . UNTIL expression
+    (11) expression -> expression . BOUNDED_UNTIL expression
+    (12) expression -> expression . RELEASE expression
+    (13) expression -> expression . BOUNDED_RELEASE expression
+
+    OR              reduce using rule 6 (expression -> expression EQUIVALENT expression .)
+    AND             reduce using rule 6 (expression -> expression EQUIVALENT expression .)
+    IMPLIES         reduce using rule 6 (expression -> expression EQUIVALENT expression .)
+    EQUIVALENT      reduce using rule 6 (expression -> expression EQUIVALENT expression .)
+    XOR             reduce using rule 6 (expression -> expression EQUIVALENT expression .)
+    $end            reduce using rule 6 (expression -> expression EQUIVALENT expression .)
+    RPAREN          reduce using rule 6 (expression -> expression EQUIVALENT expression .)
+    UNTIL           shift and go to state 16
+    BOUNDED_UNTIL   shift and go to state 17
+    RELEASE         shift and go to state 18
+    BOUNDED_RELEASE shift and go to state 19
+
+  ! UNTIL           [ reduce using rule 6 (expression -> expression EQUIVALENT expression .) ]
+  ! BOUNDED_UNTIL   [ reduce using rule 6 (expression -> expression EQUIVALENT expression .) ]
+  ! RELEASE         [ reduce using rule 6 (expression -> expression EQUIVALENT expression .) ]
+  ! BOUNDED_RELEASE [ reduce using rule 6 (expression -> expression EQUIVALENT expression .) ]
+  ! OR              [ shift and go to state 11 ]
+  ! AND             [ shift and go to state 12 ]
+  ! IMPLIES         [ shift and go to state 13 ]
+  ! EQUIVALENT      [ shift and go to state 14 ]
+  ! XOR             [ shift and go to state 15 ]
+
+
+state 32
+
+    (7) expression -> expression XOR expression .
+    (3) expression -> expression . OR expression
+    (4) expression -> expression . AND expression
+    (5) expression -> expression . IMPLIES expression
+    (6) expression -> expression . EQUIVALENT expression
+    (7) expression -> expression . XOR expression
+    (10) expression -> expression . UNTIL expression
+    (11) expression -> expression . BOUNDED_UNTIL expression
+    (12) expression -> expression . RELEASE expression
+    (13) expression -> expression . BOUNDED_RELEASE expression
+
+    OR              reduce using rule 7 (expression -> expression XOR expression .)
+    AND             reduce using rule 7 (expression -> expression XOR expression .)
+    XOR             reduce using rule 7 (expression -> expression XOR expression .)
+    $end            reduce using rule 7 (expression -> expression XOR expression .)
+    RPAREN          reduce using rule 7 (expression -> expression XOR expression .)
+    IMPLIES         shift and go to state 13
+    EQUIVALENT      shift and go to state 14
+    UNTIL           shift and go to state 16
+    BOUNDED_UNTIL   shift and go to state 17
+    RELEASE         shift and go to state 18
+    BOUNDED_RELEASE shift and go to state 19
+
+  ! IMPLIES         [ reduce using rule 7 (expression -> expression XOR expression .) ]
+  ! EQUIVALENT      [ reduce using rule 7 (expression -> expression XOR expression .) ]
+  ! UNTIL           [ reduce using rule 7 (expression -> expression XOR expression .) ]
+  ! BOUNDED_UNTIL   [ reduce using rule 7 (expression -> expression XOR expression .) ]
+  ! RELEASE         [ reduce using rule 7 (expression -> expression XOR expression .) ]
+  ! BOUNDED_RELEASE [ reduce using rule 7 (expression -> expression XOR expression .) ]
+  ! OR              [ shift and go to state 11 ]
+  ! AND             [ shift and go to state 12 ]
+  ! XOR             [ shift and go to state 15 ]
+
+
+state 33
+
+    (10) expression -> expression UNTIL expression .
+    (3) expression -> expression . OR expression
+    (4) expression -> expression . AND expression
+    (5) expression -> expression . IMPLIES expression
+    (6) expression -> expression . EQUIVALENT expression
+    (7) expression -> expression . XOR expression
+    (10) expression -> expression . UNTIL expression
+    (11) expression -> expression . BOUNDED_UNTIL expression
+    (12) expression -> expression . RELEASE expression
+    (13) expression -> expression . BOUNDED_RELEASE expression
+
+    OR              reduce using rule 10 (expression -> expression UNTIL expression .)
+    AND             reduce using rule 10 (expression -> expression UNTIL expression .)
+    IMPLIES         reduce using rule 10 (expression -> expression UNTIL expression .)
+    EQUIVALENT      reduce using rule 10 (expression -> expression UNTIL expression .)
+    XOR             reduce using rule 10 (expression -> expression UNTIL expression .)
+    UNTIL           reduce using rule 10 (expression -> expression UNTIL expression .)
+    BOUNDED_UNTIL   reduce using rule 10 (expression -> expression UNTIL expression .)
+    RELEASE         reduce using rule 10 (expression -> expression UNTIL expression .)
+    BOUNDED_RELEASE reduce using rule 10 (expression -> expression UNTIL expression .)
+    $end            reduce using rule 10 (expression -> expression UNTIL expression .)
+    RPAREN          reduce using rule 10 (expression -> expression UNTIL expression .)
+
+  ! OR              [ shift and go to state 11 ]
+  ! AND             [ shift and go to state 12 ]
+  ! IMPLIES         [ shift and go to state 13 ]
+  ! EQUIVALENT      [ shift and go to state 14 ]
+  ! XOR             [ shift and go to state 15 ]
+  ! UNTIL           [ shift and go to state 16 ]
+  ! BOUNDED_UNTIL   [ shift and go to state 17 ]
+  ! RELEASE         [ shift and go to state 18 ]
+  ! BOUNDED_RELEASE [ shift and go to state 19 ]
+
+
+state 34
+
+    (11) expression -> expression BOUNDED_UNTIL expression .
+    (3) expression -> expression . OR expression
+    (4) expression -> expression . AND expression
+    (5) expression -> expression . IMPLIES expression
+    (6) expression -> expression . EQUIVALENT expression
+    (7) expression -> expression . XOR expression
+    (10) expression -> expression . UNTIL expression
+    (11) expression -> expression . BOUNDED_UNTIL expression
+    (12) expression -> expression . RELEASE expression
+    (13) expression -> expression . BOUNDED_RELEASE expression
+
+    OR              reduce using rule 11 (expression -> expression BOUNDED_UNTIL expression .)
+    AND             reduce using rule 11 (expression -> expression BOUNDED_UNTIL expression .)
+    IMPLIES         reduce using rule 11 (expression -> expression BOUNDED_UNTIL expression .)
+    EQUIVALENT      reduce using rule 11 (expression -> expression BOUNDED_UNTIL expression .)
+    XOR             reduce using rule 11 (expression -> expression BOUNDED_UNTIL expression .)
+    UNTIL           reduce using rule 11 (expression -> expression BOUNDED_UNTIL expression .)
+    BOUNDED_UNTIL   reduce using rule 11 (expression -> expression BOUNDED_UNTIL expression .)
+    RELEASE         reduce using rule 11 (expression -> expression BOUNDED_UNTIL expression .)
+    BOUNDED_RELEASE reduce using rule 11 (expression -> expression BOUNDED_UNTIL expression .)
+    $end            reduce using rule 11 (expression -> expression BOUNDED_UNTIL expression .)
+    RPAREN          reduce using rule 11 (expression -> expression BOUNDED_UNTIL expression .)
+
+  ! OR              [ shift and go to state 11 ]
+  ! AND             [ shift and go to state 12 ]
+  ! IMPLIES         [ shift and go to state 13 ]
+  ! EQUIVALENT      [ shift and go to state 14 ]
+  ! XOR             [ shift and go to state 15 ]
+  ! UNTIL           [ shift and go to state 16 ]
+  ! BOUNDED_UNTIL   [ shift and go to state 17 ]
+  ! RELEASE         [ shift and go to state 18 ]
+  ! BOUNDED_RELEASE [ shift and go to state 19 ]
+
+
+state 35
+
+    (12) expression -> expression RELEASE expression .
+    (3) expression -> expression . OR expression
+    (4) expression -> expression . AND expression
+    (5) expression -> expression . IMPLIES expression
+    (6) expression -> expression . EQUIVALENT expression
+    (7) expression -> expression . XOR expression
+    (10) expression -> expression . UNTIL expression
+    (11) expression -> expression . BOUNDED_UNTIL expression
+    (12) expression -> expression . RELEASE expression
+    (13) expression -> expression . BOUNDED_RELEASE expression
+
+    OR              reduce using rule 12 (expression -> expression RELEASE expression .)
+    AND             reduce using rule 12 (expression -> expression RELEASE expression .)
+    IMPLIES         reduce using rule 12 (expression -> expression RELEASE expression .)
+    EQUIVALENT      reduce using rule 12 (expression -> expression RELEASE expression .)
+    XOR             reduce using rule 12 (expression -> expression RELEASE expression .)
+    UNTIL           reduce using rule 12 (expression -> expression RELEASE expression .)
+    BOUNDED_UNTIL   reduce using rule 12 (expression -> expression RELEASE expression .)
+    RELEASE         reduce using rule 12 (expression -> expression RELEASE expression .)
+    BOUNDED_RELEASE reduce using rule 12 (expression -> expression RELEASE expression .)
+    $end            reduce using rule 12 (expression -> expression RELEASE expression .)
+    RPAREN          reduce using rule 12 (expression -> expression RELEASE expression .)
+
+  ! OR              [ shift and go to state 11 ]
+  ! AND             [ shift and go to state 12 ]
+  ! IMPLIES         [ shift and go to state 13 ]
+  ! EQUIVALENT      [ shift and go to state 14 ]
+  ! XOR             [ shift and go to state 15 ]
+  ! UNTIL           [ shift and go to state 16 ]
+  ! BOUNDED_UNTIL   [ shift and go to state 17 ]
+  ! RELEASE         [ shift and go to state 18 ]
+  ! BOUNDED_RELEASE [ shift and go to state 19 ]
+
+
+state 36
+
+    (13) expression -> expression BOUNDED_RELEASE expression .
+    (3) expression -> expression . OR expression
+    (4) expression -> expression . AND expression
+    (5) expression -> expression . IMPLIES expression
+    (6) expression -> expression . EQUIVALENT expression
+    (7) expression -> expression . XOR expression
+    (10) expression -> expression . UNTIL expression
+    (11) expression -> expression . BOUNDED_UNTIL expression
+    (12) expression -> expression . RELEASE expression
+    (13) expression -> expression . BOUNDED_RELEASE expression
+
+    OR              reduce using rule 13 (expression -> expression BOUNDED_RELEASE expression .)
+    AND             reduce using rule 13 (expression -> expression BOUNDED_RELEASE expression .)
+    IMPLIES         reduce using rule 13 (expression -> expression BOUNDED_RELEASE expression .)
+    EQUIVALENT      reduce using rule 13 (expression -> expression BOUNDED_RELEASE expression .)
+    XOR             reduce using rule 13 (expression -> expression BOUNDED_RELEASE expression .)
+    UNTIL           reduce using rule 13 (expression -> expression BOUNDED_RELEASE expression .)
+    BOUNDED_UNTIL   reduce using rule 13 (expression -> expression BOUNDED_RELEASE expression .)
+    RELEASE         reduce using rule 13 (expression -> expression BOUNDED_RELEASE expression .)
+    BOUNDED_RELEASE reduce using rule 13 (expression -> expression BOUNDED_RELEASE expression .)
+    $end            reduce using rule 13 (expression -> expression BOUNDED_RELEASE expression .)
+    RPAREN          reduce using rule 13 (expression -> expression BOUNDED_RELEASE expression .)
+
+  ! OR              [ shift and go to state 11 ]
+  ! AND             [ shift and go to state 12 ]
+  ! IMPLIES         [ shift and go to state 13 ]
+  ! EQUIVALENT      [ shift and go to state 14 ]
+  ! XOR             [ shift and go to state 15 ]
+  ! UNTIL           [ shift and go to state 16 ]
+  ! BOUNDED_UNTIL   [ shift and go to state 17 ]
+  ! RELEASE         [ shift and go to state 18 ]
+  ! BOUNDED_RELEASE [ shift and go to state 19 ]
+
+
+state 37
+
+    (18) expression -> LPAREN expression RPAREN .
+
+    OR              reduce using rule 18 (expression -> LPAREN expression RPAREN .)
+    AND             reduce using rule 18 (expression -> LPAREN expression RPAREN .)
+    IMPLIES         reduce using rule 18 (expression -> LPAREN expression RPAREN .)
+    EQUIVALENT      reduce using rule 18 (expression -> LPAREN expression RPAREN .)
+    XOR             reduce using rule 18 (expression -> LPAREN expression RPAREN .)
+    UNTIL           reduce using rule 18 (expression -> LPAREN expression RPAREN .)
+    BOUNDED_UNTIL   reduce using rule 18 (expression -> LPAREN expression RPAREN .)
+    RELEASE         reduce using rule 18 (expression -> LPAREN expression RPAREN .)
+    BOUNDED_RELEASE reduce using rule 18 (expression -> LPAREN expression RPAREN .)
+    $end            reduce using rule 18 (expression -> LPAREN expression RPAREN .)
+    RPAREN          reduce using rule 18 (expression -> LPAREN expression RPAREN .)
+

@@ -1,0 +1,22 @@
+INFO {
+  TITLE:       "001"
+  DESCRIPTION: "Random/Syft/syft_1"
+  SEMANTICS:   Finite,Moore
+  TARGET:      Mealy
+}
+
+MAIN {
+
+  INPUTS {
+
+  }
+
+  OUTPUTS {
+    a1;b1;c1;d1;e1;f1;g1;h1;i1;
+  }
+
+  GUARANTEES {
+    (a1|b1) & (c1|d1) & (e1 & f1 & g1) & (e1 & f1) & (f1 & g1) & (a1 & b1 & c1 & d1 & f1) & <a1&b1>c1 & <b1>c1 & <b1?>c1 & <b1;c1?>d1 & <a1*;c1;d1>f1 & <a1;b1;c1;d1;f1;g1;h1>i1 & <a1;b1 + b1;c1>d1 & <a1 + b1 + c1 + d1 + d1>e1;
+  }
+
+}
